@@ -2,9 +2,26 @@
 
 public static class Program{
     public static void Main(){
-        Task_1();
-        Task_2();
-        //Task_3();
+        byte num_task;
+        bool state_prog = true;
+        while(state_prog){
+            Console.Write("Stop program - 4\nEnter number Task: ");
+            num_task = Convert.ToByte(Console.ReadLine());
+            switch (num_task){
+                case 1: 
+                    Task_1();
+                    break;
+                case 2: 
+                    Task_2();
+                    break;
+                case 3: 
+                    Task_3();
+                    break;
+                default:
+                    state_prog = false;
+                    break;
+            }
+        }
     }
     public static void Task_1(){
         Console.Write("Enter the number of lines: ");
@@ -51,5 +68,22 @@ public static class Program{
         Console.ReadLine();
         Console.Clear();
     }
-
+    public static void Task_3(){
+        Console.Write("Set a range of numbers: 0 ... ");
+        int maxValue = Convert.ToInt32(Console.ReadLine());
+        Random rnd = new Random();
+        int num = rnd.Next(0, maxValue);
+        while(1 == 1){
+            Console.Write("Guess the number: ");
+            int num_user = Convert.ToInt32(Console.ReadLine());
+            if (num_user == num)
+                break;
+            else if (num_user > num)
+                Console.WriteLine("Your number is greater. Тry again.");
+            else Console.WriteLine("Your number is less. Тry again.");
+        }
+        Console.WriteLine($"Сongratulations you guessed right. Hidden number: {num}");
+        Console.ReadLine();
+        Console.Clear();
+    }
 }
