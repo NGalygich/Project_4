@@ -3,7 +3,7 @@
 public static class Program{
     public static void Main(){
         Task_1();
-        //Task_2();
+        Task_2();
         //Task_3();
     }
     public static void Task_1(){
@@ -24,6 +24,30 @@ public static class Program{
              Console.WriteLine();
         }
         Console.WriteLine($"Sum of all elements: {sum}");
+        Console.ReadLine();
+        Console.Clear();
+    }
+        public static void Task_2(){
+        Console.Write("Sequence length: ");
+        byte length = Convert.ToByte(Console.ReadLine());
+        int[] sequence = new int[length];
+        Console.WriteLine("Enter sequence");
+        byte i = 0;
+        //Sequence completion
+        while(i < length){
+                sequence [i] = Convert.ToInt32(Console.ReadLine());  
+                i++;
+        }
+        int lowestFound = int.MaxValue;
+        foreach (int el in sequence)
+        {
+            // By using int.MaxValue as the initial value
+            if (lowestFound > el)
+            {
+                lowestFound = el;
+            }
+        }
+        Console.WriteLine($"Lowest element in sequence: {lowestFound}");
         Console.ReadLine();
         Console.Clear();
     }
