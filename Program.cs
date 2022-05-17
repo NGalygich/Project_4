@@ -1,6 +1,11 @@
 ﻿namespace Project_4;
 
 public static class Program{
+
+    public static void ClearConsole(){
+        Console.ReadLine();
+        Console.Clear();
+    }
     public static void Main(){
         byte numTask;
         bool stateProg = true;
@@ -41,8 +46,7 @@ public static class Program{
              Console.WriteLine();
         }
         Console.WriteLine($"Sum of all elements: {sum}");
-        Console.ReadLine();
-        Console.Clear();
+        ClearConsole();
     }
         public static void Task_2(){
         Console.Write("sArray length: ");
@@ -59,14 +63,10 @@ public static class Program{
         foreach (int el in sArray)
         {
             // By using int.MaxValue as the initial value
-            if (lowestFound > el)
-            {
-                lowestFound = el;
-            }
+            if (lowestFound > el) lowestFound = el;
         }
         Console.WriteLine($"Lowest element in sArray: {lowestFound}");
-        Console.ReadLine();
-        Console.Clear();
+        ClearConsole();
     }
     public static void Task_3(){
         Console.Write("Set a range of numbers: 0 ... ");
@@ -83,7 +83,6 @@ public static class Program{
             else Console.WriteLine("Your number is less. Тry again.");
         }
         Console.WriteLine($"Сongratulations you guessed right. Hidden number: {num}");
-        Console.ReadLine();
-        Console.Clear();
+        ClearConsole();
     }
 }
