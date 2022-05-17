@@ -2,12 +2,12 @@
 
 public static class Program{
     public static void Main(){
-        byte num_task;
-        bool state_prog = true;
-        while(state_prog){
+        byte numTask;
+        bool stateProg = true;
+        while(stateProg){
             Console.Write("Stop program - 4\nEnter number Task: ");
-            num_task = Convert.ToByte(Console.ReadLine());
-            switch (num_task){
+            numTask = Convert.ToByte(Console.ReadLine());
+            switch (numTask){
                 case 1: 
                     Task_1();
                     break;
@@ -18,22 +18,22 @@ public static class Program{
                     Task_3();
                     break;
                 default:
-                    state_prog = false;
+                    stateProg = false;
                     break;
             }
         }
     }
     public static void Task_1(){
         Console.Write("Enter the number of lines: ");
-        byte lines = Convert.ToByte(Console.ReadLine());
+        byte linesArray = Convert.ToByte(Console.ReadLine());
         Console.Write("Enter number of columns: ");
-        byte columns = Convert.ToByte(Console.ReadLine());
-        SByte[,] array = new SByte[lines, columns];
+        byte columnsArray = Convert.ToByte(Console.ReadLine());
+        SByte[,] array = new SByte[linesArray, columnsArray];
         int sum = 0;
         Random rnd = new Random();
         Console.WriteLine("Your array");
-        for (byte i = 0; i<lines; i++){
-             for (byte j = 0; j < columns; j++){
+        for (byte i = 0; i<linesArray; i++){
+             for (byte j = 0; j < columnsArray; j++){
                 array[i, j] = Convert.ToSByte(rnd.Next(-128, 127));
                 Console.Write(String.Format("{0,5}", array[i, j]));
                 sum += array[i, j];
@@ -45,18 +45,18 @@ public static class Program{
         Console.Clear();
     }
         public static void Task_2(){
-        Console.Write("Sequence length: ");
-        byte length = Convert.ToByte(Console.ReadLine());
-        int[] sequence = new int[length];
-        Console.WriteLine("Enter sequence");
+        Console.Write("sArray length: ");
+        byte lengthArray = Convert.ToByte(Console.ReadLine());
+        int[] sArray = new int[lengthArray];
+        Console.WriteLine("Enter sArray");
         byte i = 0;
-        //Sequence completion
-        while(i < length){
-                sequence [i] = Convert.ToInt32(Console.ReadLine());  
+        //sArray completion
+        while(i < lengthArray){
+                sArray [i] = Convert.ToInt32(Console.ReadLine());  
                 i++;
         }
         int lowestFound = int.MaxValue;
-        foreach (int el in sequence)
+        foreach (int el in sArray)
         {
             // By using int.MaxValue as the initial value
             if (lowestFound > el)
@@ -64,7 +64,7 @@ public static class Program{
                 lowestFound = el;
             }
         }
-        Console.WriteLine($"Lowest element in sequence: {lowestFound}");
+        Console.WriteLine($"Lowest element in sArray: {lowestFound}");
         Console.ReadLine();
         Console.Clear();
     }
@@ -75,10 +75,10 @@ public static class Program{
         int num = rnd.Next(0, maxValue);
         while(1 == 1){
             Console.Write("Guess the number: ");
-            int num_user = Convert.ToInt32(Console.ReadLine());
-            if (num_user == num)
+            int numUser = Convert.ToInt32(Console.ReadLine());
+            if (numUser == num)
                 break;
-            else if (num_user > num)
+            else if (numUser > num)
                 Console.WriteLine("Your number is greater. Тry again.");
             else Console.WriteLine("Your number is less. Тry again.");
         }
